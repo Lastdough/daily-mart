@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "nama": "Aqua 600 mL",
+        "harga": 4000,
+        "barcode": "8886008101053"
+    },
+    {
+        "id": 2,
+        "nama": "Indomie Kari Ayam",
+        "harga": 3000,
+        "barcode": "089686010527"
+    },
+    {
+       
+        "id": 3,
+        "nama": "Indomie Goreng",
+        "harga": 3000,
+        "barcode": "08968601094"
+    },
+    {
+       
+        "id": 4,
+        "nama": "Indomie Soto Ayam",
+        "harga": 3000,
+        "barcode": "08968601094"
+    }
+]
