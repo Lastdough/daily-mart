@@ -15,7 +15,6 @@
               <table class="scannedItemTable">
                 <tbody>
                   <tr>
-                    <!-- <td style="width: 742px"> -->
                     <td>
                       <span class="text-start">
                         <h2>
@@ -23,10 +22,7 @@
                         </h2>
                       </span>
                     </td>
-                    <!-- <td style="width: 252px">&nbsp;</td> -->
-                    <!-- <td style="width: 356px"> -->
                     <td>
-                      <!-- <h2>{{ hargaBarang }}</h2> -->
                       <span class="text-end">
                         <h2>
                           {{ hargaBarangScanned }}
@@ -54,7 +50,24 @@
               <div class="tombol-wrapper d-flex align-items-center">
                 <div class="settings"></div>
                 <div class="help"></div>
-                <div class="interface-click-able"></div>
+                <div class="interface-click-able">
+                  <!-- catatan : ini saya coba buat input barcode dari text input
+                  lalu coba, nanti pas barcode nya di input bisa nampilin data ke
+                  "tabel bon"-->
+                  <form action=""></form>
+                  <input
+                    type="text"
+                    class="input-barcode"
+                    v-model="newItemBarcode"
+                    @keyup.enter="addBarcode"
+                    placeholder="Masukkan Kode Barcode"
+                  />
+                  <div class="text float-end">
+                    <p>
+                      {{ barcodeScanned }}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -87,10 +100,13 @@
               </div>
             </div>
             <div class="bon-body">
+              <!--  catatan : nambah @remove tadiya buat remove barang dari 
+              tabel tapi belum berahasil -->
               <div
                 class="bon-body-row"
-                v-for="barangTable in Barang"
+                v-for="{ index, barangTable } in Barang"
                 v-bind:key="barangTable.id"
+                @remove="removeBarang(index)"
               >
                 <table class="bon-body-row-table" border="0">
                   <tbody>
@@ -109,6 +125,7 @@
                       </td>
                       <td style="width: 60px">&nbsp;</td>
                       <td style="width: 67px">
+                        <!-- catatan : tombol yang buat remove -->
                         <button type="delete" class="btn btn-cancel">
                           <div class="cancel"></div>
                         </button>
@@ -133,12 +150,15 @@
                     </tr>
                     <tr>
                       <td style="width: 150px" class="text-start">PPN 11%</td>
-                      <td class="text-end">Rp {{formatPrice(calculatePPN(calculateSubTotal()))}}</td>
+                      <td class="text-end">
+                        Rp {{ formatPrice(calculatePPN(calculateSubTotal())) }}
+                      </td>
                     </tr>
                     <tr>
                       <td style="width: 150px" class="text-start">Total</td>
-                      <td class="text-end">Rp 
-                        {{formatPrice(calculateTotal())}}
+                      <td class="text-end">
+                        Rp
+                        {{ formatPrice(calculateTotal()) }}
                       </td>
                     </tr>
                   </tbody>
@@ -172,6 +192,8 @@ import FooterCopyright from "@/components/FooterCopyright.vue";
 
 import barangData from "@/assets/barang.json";
 
+let idBar = barangData.map(({ id }) => id);
+
 export default {
   name: "ScanView",
   components: {
@@ -182,31 +204,79 @@ export default {
   },
   data() {
     return {
-      subTotal: '',
-      Total: 0,
+      barangs: barangData,
+      Barang: [],
 
-      Barang: barangData,
-      namaBarangScanned: "Adem Sari Ching Ku 320 mL",
-      hargaBarangScanned: "Rp 7.000",
+      newItemBarcode: "",
+      barcodeScanned: [],
+      idBar,
+
+      // namaBarangScanned: "Adem Sari Ching Ku 320 mL",
+      // hargaBarangScanned: "Rp 7.000",
     };
   },
   methods: {
-    formatPrice(value) {
+    addBarcode() {
+      if (this.newItemBarcode) {
+        this.barcodeScanned.push({
+          // nama : this.newItemBarcode,
+          // harga: (this.newItemBarcode*1),
+          id: this.newItemBarcode * 1,
+        });
+        this.newItemBarcode = "";
+        /**
+         * catatan :
+         * ini percobaan buat nambah item tapi blm ada yang berhasil
+         */
+
+        // if (this.Barang) {
+        //   this.Barang.push(...this.barangs);
+        // }
+
+        // for (const id in this.barcodeScanned) {
+        //   if (Object.hasOwnProperty.call(barcode, id)) {
+        //     const element = barcode[id];
+
+        //   }
+        // }
+
+        // Object.values(this.barangs).forEach(function (category) {
+        //   category.forEach(function (item) {
+        //     if (item.id === 1) {
+        //       this.Barang.push(...item);
+        //     }
+        //   });
+        // });
+        // if (this.barcodeScanned.id === this.barangs.id) {
+        //   this.Barang.push(...this.barangs);
+        // }
+      }
+    },
+    removeBarcode(index) {
+      this.Barang.splice(index, 1);
+    },
+    formatPrice: function formatPrice(value) {
       let val = (value / 1).toFixed(2).replace(".", ",");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
-    calculateSubTotal() {
-      return this.Barang.map(item => item.harga).reduce((prev, curr) => prev + curr, 0);
+    calculateSubTotal: function calculateSubTotal() {
+      return this.Barang.map((item) => item.harga).reduce(
+        (prev, curr) => prev + curr,
+        0
+      );
     },
-    calculatePPN(value){
-      let ppn = value*(11/100)
-      return ppn
+    calculatePPN: function calculatePPN(value) {
+      let ppn = value * (11 / 100);
+      return ppn;
     },
-    calculateTotal(){
-      let subTotal =this.Barang.map(item => item.harga).reduce((prev, curr) => prev + curr, 0);
-      let total = subTotal + (subTotal*(11/100))
-      return total
-    }
+    calculateTotal: function calculateTotal() {
+      let subTotal = this.Barang.map((item) => item.harga).reduce(
+        (prev, curr) => prev + curr,
+        0
+      );
+      let total = subTotal + subTotal * (11 / 100);
+      return total;
+    },
   },
 };
 </script>
