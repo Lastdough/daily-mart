@@ -52,7 +52,7 @@
                 <div class="help"></div>
                 <div class="interface-click-able">
                   <!-- catatan : ini saya coba buat input barcode dari text input
-                  lalu coba, nanti pas barcode nya di input bisa nampilin data ke
+                  lalu coba nanti pas barcode nya di input bisa nampilin data ke
                   "tabel bon"-->
                   <form action=""></form>
                   <input
@@ -101,12 +101,11 @@
             </div>
             <div class="bon-body">
               <!--  catatan : nambah @remove tadiya buat remove barang dari 
-              tabel tapi belum berahasil -->
+              tabel tapi belum berhasil -->
               <div
                 class="bon-body-row"
-                v-for="{ index, barangTable } in Barang"
+                v-for="barangTable  in Barang"
                 v-bind:key="barangTable.id"
-                @remove="removeBarang(index)"
               >
                 <table class="bon-body-row-table" border="0">
                   <tbody>
@@ -192,7 +191,7 @@ import FooterCopyright from "@/components/FooterCopyright.vue";
 
 import barangData from "@/assets/barang.json";
 
-let idBar = barangData.map(({ id }) => id);
+// let idBar = barangData.map(({ id }) => id);
 
 export default {
   name: "ScanView",
@@ -204,26 +203,26 @@ export default {
   },
   data() {
     return {
-      barangs: barangData,
-      Barang: [],
+      // barangs: barangData,
+      Barang: barangData,
 
       newItemBarcode: "",
       barcodeScanned: [],
-      idBar,
+      // idBar,
 
-      // namaBarangScanned: "Adem Sari Ching Ku 320 mL",
-      // hargaBarangScanned: "Rp 7.000",
+      namaBarangScanned: "Adem Sari Ching Ku 320 mL",
+      hargaBarangScanned: "Rp 7.000",
     };
   },
   methods: {
-    addBarcode() {
-      if (this.newItemBarcode) {
-        this.barcodeScanned.push({
+    // addBarcode() {
+    //   if (this.newItemBarcode) {
+    //     this.barcodeScanned.push({
           // nama : this.newItemBarcode,
           // harga: (this.newItemBarcode*1),
-          id: this.newItemBarcode * 1,
-        });
-        this.newItemBarcode = "";
+    //       id: this.newItemBarcode * 1,
+    //     });
+    //     this.newItemBarcode = "";
         /**
          * catatan :
          * ini percobaan buat nambah item tapi blm ada yang berhasil
@@ -250,11 +249,11 @@ export default {
         // if (this.barcodeScanned.id === this.barangs.id) {
         //   this.Barang.push(...this.barangs);
         // }
-      }
-    },
-    removeBarcode(index) {
-      this.Barang.splice(index, 1);
-    },
+    //   }
+    // },
+    // removeBarcode(index) {
+    //   this.Barang.splice(index, 1);
+    // },
     formatPrice: function formatPrice(value) {
       let val = (value / 1).toFixed(2).replace(".", ",");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
