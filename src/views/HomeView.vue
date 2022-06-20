@@ -23,7 +23,7 @@
     <div class="row footer">
       <div class="container mt-4">
         <div class="wrapper d-flex justify-content-center">
-          <router-link to="/scan">
+          <router-link to="/main">
             <button
               type="button"
               class="btn btn-primary btn-lg align-items-center btn-home-footer"

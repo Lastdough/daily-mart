@@ -191,6 +191,21 @@ ol {
 }
 
 /* by Me */
+
+.alur-mart{
+    width: 100% !important;
+}
+
+.col-md-3half {
+    width: 35.4352679% !important;
+    margin-left: 45px !important;
+}
+
+.col-md-8half {
+    width: 65.5647321% !important;
+}
+
+
 .btn-primary {
     background: #B8E0D8 !important;
     border-radius: 100px;
@@ -215,7 +230,7 @@ h3 {
 
 h4 {
     font-weight: 400;
-    font-size: 24px;
+    font-size: 24px !important;
 
     color: #4c4c6d;
 }
@@ -234,7 +249,7 @@ table {
     align-items: flex-end;
 }
 
-.btn-cancel:active{
+.btn-cancel:active {
     border: transparent;
 }
 

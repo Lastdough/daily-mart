@@ -2,27 +2,79 @@
     {
         "id": 1,
         "nama": "Aqua 600 mL",
-        "harga": 4000,
+        "harga": 3700,
         "barcode": "8886008101053"
     },
     {
         "id": 2,
         "nama": "Indomie Kari Ayam",
-        "harga": 3000,
+        "harga": 3100,
         "barcode": "089686010527"
     },
     {
        
         "id": 3,
         "nama": "Indomie Goreng",
-        "harga": 3000,
-        "barcode": "08968601094"
+        "harga": 3200,
+        "barcode": "089686010947"
     },
     {
        
         "id": 4,
-        "nama": "Indomie Soto Ayam",
-        "harga": 3000,
-        "barcode": "08968601094"
+        "nama": "Indomie Soto Banjar",
+        "harga": 3200,
+        "barcode": "089686011692"
+    },
+    {
+       
+        "id": 5,
+        "nama": "Potabee Ayam Bakar 68g",
+        "harga": 10400,
+        "barcode": "8998866202053"
+    },
+    {
+       
+        "id": 6,
+        "nama": "Madu TJ Murni 500g",
+        "harga": 59700,
+        "barcode": "8993365135031"
+    },
+    {
+       
+        "id": 7,
+        "nama": "Garam Konsumsi 250g",
+        "harga": 4700,
+        "barcode": "8993391311751"
+    },
+    {
+       
+        "id": 8,
+        "nama": "Kikkoman Saus Ikan 150mL",
+        "harga": 16700,
+        "barcode": "8997010323804"
+    },
+    {
+        "id": 9,
+        "nama": "Teh Tong Tji Celup",
+        "harga": 11300,
+        "barcode": "8992936115021"
+    },
+    {
+        "id": 10,
+        "nama": "Forvita Margarin 250g",
+        "harga": 12700,
+        "barcode": "8992946521188"
+    },
+    {
+        "id": 11,
+        "nama": "Bogasari Cakra Kembar",
+        "harga": 14700,
+        "barcode": "8993296101112"
+    },
+    {
+        "id": 12,
+        "nama": "Gulaku 1Kg Premium",
+        "harga": 13600,
+        "barcode": "8995177101112"
     }
 ]

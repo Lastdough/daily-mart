@@ -1,7 +1,7 @@
 <template>
   <div class="alur-mart">
     <div class="alur d-flex justify-content-center">
-      <!-- <div class="wrapper-alur d-flex">
+      <div class="wrapper-alur d-flex">
         <div class="icon-alur ">
           <div class="scanBarcode"></div>
           <div class="paymentOp"></div>
@@ -18,20 +18,26 @@
           <div class="text-non-active">Pembayaran</div>
           <div class="text-non-active">Transaksi<br>Selesai</div>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "AlurMart",
+  name: "AlurMartScan",
 };
 </script>
 
+<style scoped>
+.scanBarcode{
+  background-image: url("@/assets/scanBarcodeG.png") !important;
+}
+</style>
+
 <style>
 .alur {
-  width: 1157px;
+  width: 100%;
   height: 234px;
   background: #ffffff;
   box-shadow: -10px 10px 23px rgba(0, 0, 0, 0.25);

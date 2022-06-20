@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ScanView from '../views/ScanView.vue'
-import PaymentView from '../views/PaymentView.vue'
+import MainView from '../views/MainView.vue'
+// import PaymentView from '../views/PaymentView.vue'
 
 const routes = [
   {
@@ -10,15 +10,15 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/scan',
-    name: 'ScanView',
-    component: ScanView
+    path: '/main',
+    name: 'MainView',
+    component: MainView
   },
-  {
-    path: '/payment',
-    name: 'PaymetView',
-    component: PaymentView
-  },
+  // {
+  //   path: '/payment',
+  //   name: 'PaymetView',
+  //   component: PaymentView
+  // },
   {
     path: '/about',
     name: 'about',
