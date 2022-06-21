@@ -130,7 +130,7 @@
                       class="btn btn-primary btn-checkout btn-lg"
                       v-if="!isCheckoutHidden"
                       @click="
-                        (alur = 'AlurMartPay'),
+                        (alur = 'AlurMartMet'),
                           (rowBawah = 'PaymentMethod'),
                           (isCheckoutHidden = true),
                           (isBackHidden = false),
@@ -158,7 +158,7 @@
 import HeaderMart from "@/components/HeaderMart.vue";
 
 import AlurMartScan from "@/components/AlurMartScan.vue";
-import AlurMartPay from "@/components/AlurMartPay.vue";
+import AlurMartMet from "@/components/AlurMartMet.vue";
 import ScannedItem from "@/components/ScannedItem.vue";
 import BonBody from "@/components/BonBody.vue";
 import BonFooterScan from "@/components/BonFooterScan.vue";
@@ -176,7 +176,12 @@ export default {
     HeaderMart,
     // component Alur
     AlurMartScan,
-    AlurMartPay,
+    AlurMartMet,
+    // AlurMartPay,
+    // AlurMartFin
+
+
+
     // component Scanned Item
     ScannedItem,
 
@@ -185,7 +190,9 @@ export default {
     BonFooterScan,
     BonFooterPay,
 
-    // component metode pembayaran
+    /**
+     * Component Metode Pembayaran
+     **/ 
     PaymentMethod,
     // CashMethod,
     // CreditMethod,
@@ -193,6 +200,10 @@ export default {
     // GopayMethod,
     // OvoMethod,
     // ShopeeMethod,
+
+
+    // component transaksi selesai
+    // TransaksiSelesai,
 
     FooterCopyright,
   },

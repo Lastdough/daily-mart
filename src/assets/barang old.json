@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "nama": "Aqua 600 mL",
+        "harga": 4000,
+        "barcode": "8886008101053"
+    },
+    {
+        "id": 2,
+        "nama": "Indomie Kari Ayam",
+        "harga": 3000,
+        "barcode": "089686010527"
+    },
+    {
+       
+        "id": 3,
+        "nama": "Indomie Goreng",
+        "harga": 3000,
+        "barcode": "089686010947"
+    },
+    {
+       
+        "id": 4,
+        "nama": "Indomie Soto Banjar",
+        "harga": 3000,
+        "barcode": "089686011692"
+    },
+    {
+       
+        "id": 5,
+        "nama": "Potabee Ayam Bakar 68g",
+        "harga": 3000,
+        "barcode": "8998866202053"
+    },
+    {
+       
+        "id": 6,
+        "nama": "Madu TJ Murni 500g",
+        "harga": 3000,
+        "barcode": "8993365135031"
+    },
+    {
+       
+        "id": 7,
+        "nama": "Garam Cap Segi Tiga Emas 250g",
+        "harga": 3000,
+        "barcode": "8993391311751"
+    },
+    {
+       
+        "id": 8,
+        "nama": "Kikkoman Saus Ikan 150mL",
+        "harga": 3000,
+        "barcode": "8997010323804"
+    }
+]
