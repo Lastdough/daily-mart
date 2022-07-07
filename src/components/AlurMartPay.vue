@@ -10,12 +10,15 @@
         </div>
         <div class="alurLine">
           <div class="Line"></div>
-          <div class="ellipse"></div>
+          <div class="ellipse el1"></div>
+          <div class="ellipse el2"></div>
+          <div class="ellipse el3"></div>
+          <div class="ellipse el4" hidden></div>
         </div>
         <div class="alurText d-flex justify-content-between">
           <div class="text-active">Scan<br />Barcode</div>
-          <div class="text-non-active">Pilihan<br />Pembayaran</div>
-          <div class="text-non-active">Pembayaran</div>
+          <div class="text-active">Pilihan<br />Pembayaran</div>
+          <div class="text-active">Pembayaran</div>
           <div class="text-non-active">Transaksi<br />Selesai</div>
         </div>
       </div>
@@ -25,13 +28,22 @@
 
 <script>
 export default {
-  name: "AlurMartScan",
+  name: "AlurMartMet",
 };
 </script>
 
 <style scoped>
 .scanBarcode {
   background-image: url("@/assets/scanBarcodeG.png") !important;
+}
+.paymentOp {
+  background-image: url("@/assets/paymentOpG.png") !important;
+}
+.payment-alur {
+  background-image: url("@/assets/paymentG.png");
+}
+.Line {
+  background-image: url("@/assets/lineG2.png") !important;
 }
 </style>
 
@@ -120,9 +132,21 @@ export default {
   width: 40px;
   height: 40px;
   margin-top: 0px;
-  margin-left: 0px;
 
   background-image: url("@/assets/Ellipse.png");
+}
+
+.el1 {
+  margin-left: 0px;
+}
+.el2 {
+  margin-left: 266px;
+}
+.el3 {
+  margin-left: 569px;
+}
+.el4 {
+  margin-left: 0px;
 }
 
 .alurText {

@@ -16,8 +16,8 @@
           <div class="ellipse el4" hidden></div>
         </div>
         <div class="alurText d-flex justify-content-between">
-          <div class="text-non-active">Scan<br />Barcode</div>
-          <div class="text-non-active">Pilihan<br />Pembayaran</div>
+          <div class="text-active">Scan<br />Barcode</div>
+          <div class="text-active">Pilihan<br />Pembayaran</div>
           <div class="text-non-active">Pembayaran</div>
           <div class="text-non-active">Transaksi<br />Selesai</div>
         </div>

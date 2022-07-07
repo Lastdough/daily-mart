@@ -192,8 +192,17 @@ ol {
 
 /* by Me */
 
-.alur-mart{
+.alur-mart {
     width: 100% !important;
+}
+
+.text-active {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #4C4C6D;
+
 }
 
 .col-md-3half {
